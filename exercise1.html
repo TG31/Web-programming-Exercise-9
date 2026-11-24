@@ -1,1 +1,40 @@
-        <!-- Write your code here -->
+<!-- Exercise 1 -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .box {
+        background-color: green;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        color: white;
+        font-family: sans-serif;
+        font-weight: 600;
+      }
+    </style>
+    <button
+      style="background-color: rgb(159, 242, 245); width: 100px; height: 30px"
+      id="addBtn"
+    >
+      Add box
+    </button>
+    <script>
+      let add = document.getElementById("addBtn");
+      add.addEventListener("click", () => {
+        let box = document.createElement("div");
+        box.classList.add("box");
+        box.textContent = "Click to remove box";
+        document.body.appendChild(box);
+        box.addEventListener("click", () => {
+          document.body.removeChild(box);
+        });
+      });
+    </script>
+  </body>
+</html>
