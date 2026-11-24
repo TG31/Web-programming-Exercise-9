@@ -1,1 +1,48 @@
-   <!-- Write your code here -->
+<!-- Exercise 2 -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        color: white;
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        border-radius: 15px;
+        margin: 30px 20px 0px 0px;
+        font-family: sans-serif;
+      }
+
+      #container {
+        display: flex;
+      }
+    </style>
+    <button
+      style="background-color: rgb(159, 242, 245); width: 100px; height: 30px"
+      id="addBtn"
+    >
+      Add box
+    </button>
+    <div id="container"></div>
+    <script>
+      let index = 1;
+      let add = document.getElementById("addBtn");
+      add.addEventListener("click", () => {
+        let box = document.createElement("div");
+        box.classList.add("box");
+        box.textContent = index;
+        index += 1;
+        document.getElementById("container").appendChild(box);
+      });
+    </script>
+  </body>
+</html>
