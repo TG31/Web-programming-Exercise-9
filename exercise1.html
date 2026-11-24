@@ -8,7 +8,16 @@
   </head>
   <body>
     <style>
+      html,
+      body {
+        justify-content: center !important;
+        align-items: center !important;
+      }
       .box {
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center;
         background-color: green;
         width: 100px;
         height: 100px;
@@ -16,6 +25,12 @@
         color: white;
         font-family: sans-serif;
         font-weight: 600;
+        margin: 30px 20px 0px 0px;
+        border-radius: 10px;
+      }
+
+      #container {
+        display: flex;
       }
     </style>
     <button
@@ -24,15 +39,16 @@
     >
       Add box
     </button>
+    <div id="container"></div>
     <script>
       let add = document.getElementById("addBtn");
       add.addEventListener("click", () => {
         let box = document.createElement("div");
         box.classList.add("box");
         box.textContent = "Click to remove box";
-        document.body.appendChild(box);
+        document.getElementById("container").appendChild(box);
         box.addEventListener("click", () => {
-          document.body.removeChild(box);
+          document.getElementById("container").removeChild(box);
         });
       });
     </script>
